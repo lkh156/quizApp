@@ -227,9 +227,9 @@ const store = {
 // These functions return HTML templates
 
 const grabStart = () => {
-  return ` <h2>Test your fundamental Computer Science knowledge!</h2>
+  return ` 
   <div class="block">
-    <h3>Ready to start?</h3>
+    <h3>Ready to test your fundamental computer science knowledge?</h3>
     <button id="beginQuiz">
       Click here!<br />
     </button>
@@ -240,9 +240,11 @@ const grabStart = () => {
 const grabQuestion = (i) => {
   store.questionNumber++
   let option = store.questions[i].answers
-  return `<h2>${store.questions[i].question}</h2>
+  return `
           <div class="block questions">
             <h3>Question ${store.questionNumber}</h3>
+            <h2>${store.questions[i].question}</h2>
+            <hr>
             <form id="questionForm">                
               <input type="radio" id="A" value="${option[0]}" name="spaceqs" required></input>
               <label for="A">${option[0]}</label>
@@ -259,10 +261,11 @@ const grabQuestion = (i) => {
 }
 
 const grabAnswer = (results, i) => {
-  return `<h2>Answer is</h2>
+  return `
   <div class="block">
     <h3>${results === "correct" ? "You got it!" : "Sorry..."}</h3>
-<p>${store.questions[i].correctAnswer}</p>
+    <hr>
+<h3>The correct answer was: ${store.questions[i].correctAnswer}</h3>
     <button id="nextQuestion">Next Question</button>
     <p class="tally">Correct: ${store.score}, Incorrect: ${store.questionNumber - store.score}</p>
   </div>`

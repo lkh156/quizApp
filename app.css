@@ -5,12 +5,20 @@ body {
   margin: 0;
 }
 
-
-
 .block {
-  border: 1px solid grey;
+ /* border: 1px solid #0f0;
   width: 75%;
-  margin: auto;
+  margin: auto;*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #0f0;
+  font-size: 1rem;
+  padding: 1rem;
+  border: 6px dotted;
+  border-radius: 10px;
+  
 }
 
 button,
@@ -21,6 +29,7 @@ button,
   margin: 3% auto;
   background-color: lightgrey;
   border: 1px solid darkslategrey;
+  color: black;
 }
 
 input[type="submit"] {
@@ -48,11 +57,11 @@ button:hover,
 }
 
 .questions input[type="radio"]:focus + label {
-  background-color: lightblue;
+  background-color: #0f0;
 }
 
 #q {
   width: 100%;
-  height: 250px;
+  height: 100%;
 
 }
