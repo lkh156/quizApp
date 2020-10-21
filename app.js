@@ -147,7 +147,7 @@ const store = {
         "I like bacon.....",
       ],
       correctAnswer:
-        "It is a concept that states objects of different t ypes can be accessed through the same interface.",
+        "It is a concept that states objects of different types can be accessed through the same interface.",
     },
     {
       question: "What are the four basics of Objected Oriented Programming?",
