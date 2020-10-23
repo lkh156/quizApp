@@ -206,19 +206,19 @@ const grabQuestion = (i) => {
             <hr>       
               <input type="radio" id="A" value="${
                 option[0]
-              }" name="spaceqs" required></input>
+              }" name="spaceqs" ></input>
               <label for="A">${option[0]}</label>
               <input type="radio" id="B" value="${
                 option[1]
-              }" name="spaceqs" required></input>
+              }" name="spaceqs" ></input>
               <label for="B">${option[1]}</label>
               <input type="radio" id="C" value="${
                 option[2]
-              }" name="spaceqs" required></input>
+              }" name="spaceqs" ></input>
               <label for="C">${option[2]}</label>
               <input type="radio" id="D" value="${
                 option[3]
-              }" name="spaceqs" required></input>
+              }" name="spaceqs" ></input>
               <label for="D">${option[3]}</label>
               <input type="submit" value="submit">
             </form>
@@ -272,20 +272,18 @@ const renderQuiz = (callback) => {
 let index = 0;
 
 const tally = () => {
-  $("main").on("submit", (event) => {
+  $('main').on("submit", $('#questionForm'), (event) => {
     event.preventDefault();
     let correct = store.questions[index].correctAnswer;
     let checked = $('input[name="spaceqs"]:checked').val();
     if (checked === undefined) {
-      alert("Answer required");
+      window.alert("Answer required")
     } else {
       if (correct.includes(checked)) {
         store.score++;
         renderQuiz(grabAnswer("correct", index));
-        console.log("Yay!");
       } else {
         renderQuiz(grabAnswer("incorrect", index));
-        console.log("lame...");
       }
       index++;
     }
